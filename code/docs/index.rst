@@ -6,7 +6,13 @@
 Covert Channel documentation
 ============================
 
-Please add your names, group ID, and your link to the forked public repository here by editing `index.rst` in the docs folder.
+- Şeref Barış Çağlıyan 
+
+- Sude Hayat Toprak 
+ 
+- Group ID: 02 
+
+-https://github.com/baris-cagliyan/covertovert.git
 
 
 .. toctree::

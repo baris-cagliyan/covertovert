@@ -48,7 +48,7 @@ class CovertChannelBase:
         random_string = ''.join(random.choice(all_chars) for _ in range(length))
         random_string += "."
         return random_string
-    def generate_random_binary_message(self, min_length=50, max_length=100):
+    def generate_random_binary_message(self, min_length=51, max_length=100):
         """
         - It generates a random string whose length is between the min_length and max_length, and converts it to binary format.
         - "." is the stopping character for the covert channel communication, so that it adds "." at the of the generated string without ruining the length restrictions.
@@ -57,7 +57,7 @@ class CovertChannelBase:
         random_message = self.generate_random_message(min_length=min_length, max_length=max_length)
         random_binary_message = self.convert_string_message_to_binary(message=random_message)
         return random_binary_message
-    def generate_random_binary_message_with_logging(self, log_file_name, min_length=50, max_length=100):
+    def generate_random_binary_message_with_logging(self, log_file_name, min_length=16, max_length=16):
         """
         - Same as generate_random_binary_message() function with logging option.
         """
