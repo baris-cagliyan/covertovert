@@ -11,7 +11,7 @@ class MyCovertChannel(CovertChannelBase):
     def __init__(self):
         super().__init__()
 
-    def send(self, log_file_name, threshold_1, threshold_2, threshold_3, receiver_ip):
+    def send(self, log_file_name, threshold_1, threshold_2, threshold_3, receiver_ip, sleep_duration):
         """
         Steps:
         1. Generate a random message and log it.
@@ -23,6 +23,7 @@ class MyCovertChannel(CovertChannelBase):
            - 10 -> random integer in [threshold_2, threshold_3)
            - 11 -> random integer in [threshold_3, 255] 
         5. Send packet with ICMP(type=random_integer).
+        6. Sleep for sleep_duration seconds between sending packets.
         """
         # Generate and log the random message
         binary_message = self.generate_random_binary_message_with_logging(log_file_name)
@@ -47,7 +48,7 @@ class MyCovertChannel(CovertChannelBase):
 
             pkt = IP(dst=receiver_ip)/ICMP(type=icmp_type_value)
             super().send(pkt)  
-            time.sleep(0.025)    # Tested minimum sleep time to avoid packet loss
+            time.sleep(sleep_duration)    # Tested minimum sleep time is 0.025 to avoid packet loss
 
         end=time.time()
         length = end-start

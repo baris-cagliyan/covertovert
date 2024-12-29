@@ -6,7 +6,8 @@
       "threshold_1": 30,
       "threshold_2": 200,
       "threshold_3": 250,
-      "receiver_ip": "172.18.0.3"
+      "receiver_ip": "172.18.0.3",
+      "sleep_duration" : 0.025
     }
   },
   "receive": {
